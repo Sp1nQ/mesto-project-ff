@@ -10,18 +10,18 @@ export function createCard(link, name, deleteCard, likeCard, openImage) {
   cardElement.querySelector('.card__image').setAttribute('alt', name);
   cardElement.querySelector('.card__title').textContent = name;
   
-  buttonDelete.addEventListener('click',function (evt) { 
-    const deletedCard = evt.target.closest('.card');
-    deleteCard(deletedCard);
+  buttonDelete.addEventListener('click', function () {
+    deleteCard(cardElement);
   });
+
 
   buttonLike.addEventListener('click', function(evt) {
     const likedCard = evt.target.closest('.card');
     likeCard(likedCard);
   });
 
-  cardImage.addEventListener('click', function(evt) {
-    openImage(evt);
+  cardImage.addEventListener('click', function() {
+    openImage(name, link);
   })
 
 
